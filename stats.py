@@ -11,3 +11,17 @@ def count_chars(source_string):
         else:
             results[char] = 1
     return results
+
+def sort_chars(source_dict):
+    result_list = []
+    for pair in source_dict:
+        char_key = { "char": pair }
+        num_key = { "num": source_dict[pair] }
+        new_dict = { "char": pair, "num": source_dict[pair] }
+        result_list.append(new_dict)
+    result_list.sort(reverse=True, key=char_num_helper)
+    return result_list
+
+def char_num_helper(key):
+    return key["num"]
+    
